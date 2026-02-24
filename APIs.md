@@ -199,6 +199,12 @@ Search keyword or phrase
 • **limit** (number) – Optional  
 Number of videos to return
 
+• **sortBy** (string) – Optional  
+Field used for sorting (e.g., duration, title)
+
+• **order** (string) – Optional  
+Sort order: asc | desc
+
 ----------
 
 ### Headers
@@ -210,7 +216,7 @@ Content-Type: application/json`
 
 ### Example Request
 
-`GET /api/videos/search?query=old+songs&limit=10` 
+`GET /api/videos/search?query=old+songs&limit=10&sortBy=duration&order=desc` 
 
 ----------
 
@@ -237,6 +243,12 @@ Content-Type: application/json`
 ### Error Responses
 
 ----------
+
+**Status Code:** `400 Bad Request`
+
+    {  
+       "error":  "Invalid query parameter"  
+    }
 
 **Status Code:** `401 Unauthorized`
 
