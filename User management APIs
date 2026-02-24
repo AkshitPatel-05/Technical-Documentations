@@ -1,0 +1,79 @@
+User Management API 
+
+Overview
+
+The User Management API allows developers to retrieve and manage user profile information in an application.
+Use this API to:
+•	Fetch user details
+•	Verify user existence
+•	Integrate user data into other systems
+
+Base URL
+https://api.example.com/v1
+
+Authentication
+
+This API uses Bearer Token authentication.
+How to authenticate
+1.	Open URL: https://exam.ple.com/ in a web browser.
+2.	Click Sign in. The Sign in page displays.
+3.	Click Register. The register page displays.
+4.	Enter required personal information.
+5.	Click register.  Email will be received once registered.
+Note: An email is also sent for approval. You cannot sign into the API 
+Portal until registration is approved.
+6.	Once approved, you will receive an approval mail.
+7.	Include the token in the Authorization header.
+Header format
+Authorization: Bearer <access_token>
+
+Endpoint: Get User Profile
+
+Retrieves profile information for a specific user.
+HTTP Method
+GET
+Endpoint URL
+/users/{userId}
+Path Parameters
+
+Parameter	Type	Required	Description
+userId	string	Yes	Unique identifier of the user
+
+Request Example (curl)
+curl -X GET "https://api.example.com/v1/users/12345" \
+-H "Authorization: Bearer YOUR_ACCESS_TOKEN"
+
+Response Example (200 OK)
+{
+  "id": "12345",
+  "name": "Akshit Patel",
+  "email": "akshit@example.com",
+  "status": "active"
+}
+Response Fields
+Field	Type	Description
+id	string	User ID
+name	string	Full name of the user
+email	string	Email address
+status	string	Account status
+
+Error Codes
+
+Status Code	Meaning	Description
+400	Bad Request	Invalid user ID format
+401	Unauthorized	Missing or invalid token
+404	Not Found	User does not exist
+500	Server Error	Internal server error
+
+List of APIs
+
+API Name	HTTP Method	Endpoint	Description
+Get User Profile	GET	/users/{userId}	Retrieves profile information for a specific user
+Create User	POST	/users	Creates a new user account
+Update User	PUT	/users/{userId}	Updates an existing user’s profile details
+Delete User	DELETE	/users/{userId}	Permanently deletes a user account
+
+
+
+
+
