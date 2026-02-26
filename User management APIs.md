@@ -1,6 +1,6 @@
-User Management API 
+## User Management API 
 
-Overview
+### Overview
 
 The User Management API allows developers to retrieve and manage user profile information in an application.
 Use this API to:
@@ -9,7 +9,7 @@ Use this API to:
 •	Integrate user data into other systems
 
 Base URL
-https://api.example.com/v1
+'https://api.example.com/v1"
 
 Authentication
 
